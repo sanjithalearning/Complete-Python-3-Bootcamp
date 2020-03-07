@@ -1,0 +1,48 @@
+
+1.f = open('python.txt', 'w')
+f.write("racecar\n")
+f.write("dove\n")
+f.write("dad\n")
+f.close()
+f=open("python.txt",'r')
+sw=f.read()
+print(sw)
+
+2.f = open("palin.txt","w")
+f.write("racecar\n")
+f.write("dove\n")
+f.write("dad\n")
+f.close()
+f=open("palin.txt","r")
+
+for i in range(0,4,1):
+    strRead = f.readline()
+    strStrip = strRead.rstrip('\n')
+    strReverse = strStrip[::-1]
+    if(strStrip == strReverse):
+        print(strReverse)
+    else:
+        print("false")
+f.close()
+
+3.def char_freq_table(filepath):
+    file = open(filepath)
+    test_str = file.read().lower().replace(" ", "").replace("\n", "")
+    print(test_str)
+    all_freq = {} 
+  
+    for i in test_str: 
+        if i in all_freq: 
+            all_freq[i] += 1
+        else: 
+            all_freq[i] = 1
+    print ("Count :\n " +str(all_freq))
+
+filepath = "words.txt"
+f = open("words.txt","w")
+f.write("pizza\n")
+f.write("candy\n")
+f.write("coke\n")
+f.write("cheesecake\n")
+f.close()
+char_freq_table(filepath)
